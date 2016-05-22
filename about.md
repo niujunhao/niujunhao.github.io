@@ -22,5 +22,5 @@ header-img: "img/semantic.jpg"
 - [HR点这里](http://niujunhao.github.io/2016/04/14/my-resume/)
 
 <center>
-    <p><img src="http://7xsv37.com1.z0.glb.clouddn.com/my_erweima.jpg" align="center"></p>
+    <p><img src="http://7xuevb.com1.z0.glb.clouddn.com/my_weixin.jpg" align="center"></p>
 </center>
