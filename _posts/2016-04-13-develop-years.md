@@ -24,4 +24,4 @@ tags: [开发,纪录]
 
 ![image-2016-04-13-3](http://7xsv37.com1.z0.glb.clouddn.com/current.png)
 
-加入了直播室，自主开发了几款指标，效果良好，尤其是指标获得了大多数客户的认可。可惜指标牌照及其昂贵，并未给公司带来商业价值。有兴趣的攻城狮可以看这里：[《金融指标算法》](http://chengfeifei.github.io/blog/2016/04/10/develop-indicators/)
+加入了直播室，自主开发了几款指标，效果良好，尤其是指标获得了大多数客户的认可。可惜指标牌照及其昂贵，并未给公司带来商业价值。有兴趣的攻城狮可以看这里：[《金融指标算法》](http://niujunhao.github.io/blog/2016/04/10/develop-indicators/)
