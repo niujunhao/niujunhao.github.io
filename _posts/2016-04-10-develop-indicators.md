@@ -44,22 +44,38 @@ tags: [开发,算法]
 
 斯拉瓦均线即多个周期（3,5,8,13,15,30,35,40,45,50,60）均线的组合，给出代码：
 
-	/**
-	 * 生成斯拉瓦均线
-	 * @param range 周期
-	 */
-	public void generateSlav(int range) {
-		List<Double> closeList = new ArrayList<Double>();
-		for (DataKlineItem item : this.itemList) {
-			closeList.add(item.last);
-		}
-		List<Double> list = this.calcEMA(closeList, range);
-		for (int i = 0; i < list.size(); i++) {
-			double doub = list.get(i);
-			DataKlineItem item = this.itemList.get(i);
-			item.indicatorDict.put(item.slavNAME(range), doub);
-		}
+	/** 计算斯拉瓦均线 */
+	- (void)genarateSlav:(int)period
+	{
+    		NSArray * array = [self calcEMA:self.itemList period:period];
+	
+    		for (int i = 0; i < array.count; i++)
+    		{
+        		NSNumber * num = array[i];
+        		ZMQDataKlineItem * item = self.itemList[i];
+        		[item.indicatorDict setObject:num forKey:SLAV_NAME(period)];
+    		}
 	}
+	- (NSArray *)calcEMA:(NSArray *)list period:(int)period
+	{
+		double multiplier = 2.0f / (period + 1.0f);
+		ZMQDataKlineItem * item = list[0];
+    		double firstValue = item.Last;
+    		NSMutableArray * output = [NSMutableArray array];
+    		[output addObject:@(firstValue)];
+
+    		double tmp = 0;
+    		for (int i = 1; i<list.count; i++)
+    		{
+        		ZMQDataKlineItem * item = list[i];
+        		NSNumber * last = output.lastObject;
+        		tmp = ((item.Last - last.doubleValue) * multiplier + last.doubleValue);
+
+        		[output addObject:@(tmp)];
+    		}
+    		return output;
+	}
+
 
 波段之星算法如下：
 
